@@ -10,6 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="arabicfull.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="romfull.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

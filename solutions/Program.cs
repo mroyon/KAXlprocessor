@@ -12,7 +12,7 @@ namespace ConsoleApp1
             Console.WriteLine("Hello World!");
 
 
-            string fileName = "romfull.xlsx";
+            string fileName = "arabicfull.xlsx";
             var wbookSource = new XLWorkbook(fileName);
             var ws1 = wbookSource.Worksheet(1);
             var datarows = ws1.RangeUsed().RowsUsed().Skip(1);
@@ -26,12 +26,13 @@ namespace ConsoleApp1
                 worksheet.Cell("A1").Value = "Hello World!";
                 worksheet.Cell("A2").FormulaA1 = "=MID(A1, 7, 5)";
                 //end loop here
-                 workbookDestination.SaveAs("HelloWorld.xlsx");
+                workbookDestination.SaveAs("HelloWorld.xlsx");
             }
         }
 
         private static void getRows(IXLWorksheet ws1, IEnumerable<IXLRangeRow> datarows)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             int i = 1;
             foreach (var singlerow in datarows)
             {
@@ -52,7 +53,7 @@ namespace ConsoleApp1
                         string line;
                         while ((line = reader.ReadLine()) != null)
                         {
-                            Console.WriteLine(i);
+                            Console.WriteLine(valueofcategory);
                             Console.WriteLine(line);
                             i++;
                         }
